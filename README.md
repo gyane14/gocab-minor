@@ -1,1 +1,2 @@
-# gocab-minor
+# GoCab - MUJ Car Pooling Solution
+With GoCab, we aim to break down the barrier of anonymity so that you can plan your trips smoothly and make new friends along the way! GoCab provides you with a platform where it is so easy for you to look for trips that are already planned to your destination or plan one on your own. Easy on your pockets as you share your rides and amazing people to hang out with. What more can you ask?
