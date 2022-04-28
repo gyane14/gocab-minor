@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoCab: Admin Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script type="module" defer>
+        //initializing
+        import { createClient } from "https://cdn.skypack.dev/@supabase/supabase-js";
+
+        const supabase = createClient(
+            "URL",
+            "KEY"
+        );
+
+        const main = async () => {
+            let { data, error } = await supabase
+                .from('stdinfo')
+                .select('*')
+
+            if (error) {
+                console.log(error)
+                return
+            }
+            var table = document.getElementById('table')
+            var tab = `
+            <tr>
+                <th>SR_NO</th>
+                <th>REG_NO</th>
+                <th>NAME</th>
+                <th>STD_ID</th>
+                <th>CREATED_AT</th>
+                <th>EMAIL</th>
+            </tr>`
+
+            for (let i of data) {
+                tab += `<tr>
+                    <td>${i.sr_no}</td>
+                    <td>${i.reg_no}</td>
+                    <td>${i.name}</td>
+                    <td>${i.std_id}</td>
+                    <td>${i.created_at}</td>
+                    <td>${i.email}</td>
+                </tr>`
+                table.innerHTML = tab
+            }
+
+        }
+
+        main()
+
+    </script>
+
+    <div class="header">
+        Voila! You're an Admin🥳
+    </div>
+
+    <!-- <div class="nav"> -->
+    <div class="nav">
+        <span class="navs"><a>Student Info</a></span>
+        <span class="navs"><a>Trips Info</a></span>
+    </div>
+    <!-- </div> -->
+
+    <div class="tabDiv">
+        <table id="table">
+            <!-- <tr>
+                <th>SR_NO</th>
+                <th>REG_NO</th>
+                <th>NAME</th>
+                <th>STD_ID</th>
+                <th>CREATED_AT</th>
+                <th>EMAIL</th>
+            </tr> -->
+        </table>
+    </div>
+
+    <div class="crud">
+        <span class="cruds"><a>Update Record</a></span>
+        <span class="cruds"><a>Delete Record</a><span>
+    </div>
+    <footer>
+        &copy; Abhigyan Pal & Sarthak Vijayvergiya 2022 | Manipal University Jaipur
+    </footer>
+
+
+</body>
+
+</html>
