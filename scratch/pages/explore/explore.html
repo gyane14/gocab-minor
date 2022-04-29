@@ -10,12 +10,16 @@
         * {
             padding: 0;
             margin: 0;
-            font-family: Fira Code;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body{
+            background-color: #aaa;
         }
 
         .main {
-            display: flex;
-            background-color: wheat;
+            display: flex;        
+            background-color: #EAE7DC;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -39,12 +43,13 @@
         .main--content--trips--trip {
             text-align: center;
             margin: auto;
-            width: 97%;
+            width: 100%;
             padding: 1rem;
             border-radius: 1rem;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            border: 2px solid black;
         }
 
         .main--content--trips--trip--details {
@@ -55,8 +60,6 @@
             background-color: #444545;
             border-radius: .5rem;
             text-align: center;
-
-
         }
 
         .even {
@@ -68,39 +71,53 @@
         }
 
         .explore {
-            color: white;
+            position: absolute;
             top: 0;
             right: 0;
-            padding: 1rem .65rem;
-            position: absolute;
-            background-color: #E85B4E;
+            color: white;
+            padding: 0.5em 1em 0.5em 1em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #E85A4F;
+            font-size: 1em;
+            filter: drop-shadow(0 0.3em 0.2em #aaa);
         }
 
         .main--right--arrow {
             position: absolute;
-            right: 0;
-            bottom: 0px;
+            right: 1em;
+            bottom: 1em;
             background-color: #E85B4E;
             border-radius: 50%;
             align-items: center;
             display: flex;
             justify-content: center;
         }
-
+        
         .main--right--arrow>img {
-            width: 3.5rem;
-            right: 0;
+            filter: invert(1);
+            width: 4em;
+        }
+
+        h5{
+            font-size: 1em;
+            font-weight: 300;
+        }
+
+        h3{
+            font-size: 1.3em;
+            font-weight: 500;
+            color: #555;
         }
     </style>
 </head>
 
 <body class="main">
-    <div class="explore">EXPLORE PAGE</div>
+    <div class="explore">Explore Page</div>
 
     <div class="main--content">
         <div class="main--content--trips">
             <div class="main--content--trips--trip odd">
-                <h3 class="main--content--trips--trip--location">CAMPUS -> STATION</h3>
+                <h3 class="main--content--trips--trip--location">CAMPUS &#8594; STATION</h3>
                 <div class="main--content--trips--trip--details">
                     <h5>22 March</h5>
                     <h5>22:30</h5>
@@ -109,7 +126,7 @@
             </div>
 
             <div class="main--content--trips--trip even">
-                <h3 class="main--content--trips--trip--location">CAMPUS -> AIRPORT</h3>
+                <h3 class="main--content--trips--trip--location">CAMPUS &#8594; AIRPORT</h3>
                 <div class="main--content--trips--trip--details">
                     <h5>25 March</h5>
                     <h5>1:15</h5>
@@ -118,7 +135,7 @@
             </div>
 
             <div class="main--content--trips--trip odd">
-                <h3 class="main--content--trips--trip--location">AIRPORT -> CAMPUS</h3>
+                <h3 class="main--content--trips--trip--location">AIRPORT &#8594; CAMPUS</h3>
                 <div class="main--content--trips--trip--details">
                     <h5>27 March</h5>
                     <h5>8:45</h5>
@@ -127,7 +144,7 @@
             </div>
 
             <div class="main--content--trips--trip even">
-                <h3 class="main--content--trips--trip--location">AIRPORT -> CAMPUS</h3>
+                <h3 class="main--content--trips--trip--location">AIRPORT &#8594; CAMPUS</h3>
                 <div class="main--content--trips--trip--details">
                     <h5>15 April</h5>
                     <h5>16:30</h5>
@@ -136,7 +153,7 @@
             </div>
 
             <div class="main--content--trips--trip odd">
-                <h3 class="main--content--trips--trip--location">JAIPUR -> CAMPUS</h3>
+                <h3 class="main--content--trips--trip--location">JAIPUR &#8594; CAMPUS</h3>
                 <div class="main--content--trips--trip--details">
                     <h5>10 June</h5>
                     <h5>8:20</h5>
