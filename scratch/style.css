@@ -143,3 +143,8 @@ header{
     filter: invert(1);
     width: 2em;
 }
+
+a{
+    text-decoration: none;
+    color: white;
+}

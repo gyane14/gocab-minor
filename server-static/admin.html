@@ -10,14 +10,47 @@
 </head>
 
 <body>
+
+    <div class="header">
+        Voila! You're an Admin🥳
+    </div>
+
+    <!-- <div class="nav"> -->
+    <div class="nav">
+        <span class="navs"><a>Student Info</a></span>
+        <span class="navs"><a>Trips Info</a></span>
+    </div>
+    <!-- </div> -->
+
+    <div class="tabDiv">
+        <table id="table">
+            <!-- <tr>
+                <th>SR_NO</th>
+                <th>REG_NO</th>
+                <th>NAME</th>
+                <th>STD_ID</th>
+                <th>CREATED_AT</th>
+                <th>EMAIL</th>
+            </tr> -->
+        </table>
+    </div>
+
+    <div class="crud">
+        <span class="cruds"><a>Update Record</a></span>
+        <span class="cruds"><a>Delete Record</a><span>
+    </div>
+    <footer>
+        &copy; Abhigyan Pal & Sarthak Vijayvergiya 2022 | Manipal University Jaipur
+    </footer>
+
     <script type="module" defer>
         //initializing
         import { createClient } from "https://cdn.skypack.dev/@supabase/supabase-js";
 
-        const supabase = createClient(
-            "URL",
-            "KEY"
-        );
+        // const supabase = createClient(
+        //     URL,
+        //     KEY
+        // );
 
         const main = async () => {
             let { data, error } = await supabase
@@ -54,41 +87,7 @@
         }
 
         main()
-
     </script>
-
-    <div class="header">
-        Voila! You're an Admin🥳
-    </div>
-
-    <!-- <div class="nav"> -->
-    <div class="nav">
-        <span class="navs"><a>Student Info</a></span>
-        <span class="navs"><a>Trips Info</a></span>
-    </div>
-    <!-- </div> -->
-
-    <div class="tabDiv">
-        <table id="table">
-            <!-- <tr>
-                <th>SR_NO</th>
-                <th>REG_NO</th>
-                <th>NAME</th>
-                <th>STD_ID</th>
-                <th>CREATED_AT</th>
-                <th>EMAIL</th>
-            </tr> -->
-        </table>
-    </div>
-
-    <div class="crud">
-        <span class="cruds"><a>Update Record</a></span>
-        <span class="cruds"><a>Delete Record</a><span>
-    </div>
-    <footer>
-        &copy; Abhigyan Pal & Sarthak Vijayvergiya 2022 | Manipal University Jaipur
-    </footer>
-
 
 </body>
 

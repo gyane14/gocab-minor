@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Fira Code;
+        }
+
+        .main {
+            display: flex;
+            background-color: wheat;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            max-width: 100vw;
+        }
+
+        .main--content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .main--content--trips {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .main--content--trips--trip {
+            text-align: center;
+            margin: auto;
+            width: 97%;
+            padding: 1rem;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .main--content--trips--trip--details {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0.35rem .5rem;
+            color: white;
+            background-color: #444545;
+            border-radius: .5rem;
+            text-align: center;
+
+
+        }
+
+        .even {
+            background-color: #FFCD71;
+        }
+
+        .odd {
+            background-color: #F09583;
+        }
+
+        .explore {
+            color: white;
+            top: 0;
+            right: 0;
+            padding: 1rem .65rem;
+            position: absolute;
+            background-color: #E85B4E;
+        }
+
+        .main--right--arrow {
+            position: absolute;
+            right: 0;
+            bottom: 0px;
+            background-color: #E85B4E;
+            border-radius: 50%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main--right--arrow>img {
+            width: 3.5rem;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body class="main">
+    <div class="explore">EXPLORE PAGE</div>
+
+    <div class="main--content">
+        <div class="main--content--trips">
+            <div class="main--content--trips--trip odd">
+                <h3 class="main--content--trips--trip--location">CAMPUS -> STATION</h3>
+                <div class="main--content--trips--trip--details">
+                    <h5>22 March</h5>
+                    <h5>22:30</h5>
+                    <h5>0/4</h5>
+                </div>
+            </div>
+
+            <div class="main--content--trips--trip even">
+                <h3 class="main--content--trips--trip--location">CAMPUS -> AIRPORT</h3>
+                <div class="main--content--trips--trip--details">
+                    <h5>25 March</h5>
+                    <h5>1:15</h5>
+                    <h5>0/2</h5>
+                </div>
+            </div>
+
+            <div class="main--content--trips--trip odd">
+                <h3 class="main--content--trips--trip--location">AIRPORT -> CAMPUS</h3>
+                <div class="main--content--trips--trip--details">
+                    <h5>27 March</h5>
+                    <h5>8:45</h5>
+                    <h5>2/8</h5>
+                </div>
+            </div>
+
+            <div class="main--content--trips--trip even">
+                <h3 class="main--content--trips--trip--location">AIRPORT -> CAMPUS</h3>
+                <div class="main--content--trips--trip--details">
+                    <h5>15 April</h5>
+                    <h5>16:30</h5>
+                    <h5>0/2</h5>
+                </div>
+            </div>
+
+            <div class="main--content--trips--trip odd">
+                <h3 class="main--content--trips--trip--location">JAIPUR -> CAMPUS</h3>
+                <div class="main--content--trips--trip--details">
+                    <h5>10 June</h5>
+                    <h5>8:20</h5>
+                    <h5>1/2</h5>
+                </div>
+            </div>
+        </div>
+        
+        <a href="../../index.html">
+            <div class="main--right--arrow">
+                <img src="./icons8-arrow-100.png" />
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>
