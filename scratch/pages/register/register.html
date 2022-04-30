@@ -120,19 +120,16 @@
             async function main () {
         
                 const supabase = createClient(
-                    "https://gpzjfpxijvsmpcnkylse.supabase.co",
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwempmcHhpanZzbXBjbmt5bHNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDYwMzUyOTEsImV4cCI6MTk2MTYxMTI5MX0.kggo60IGe1b7bsQKvmjXJAawuEE9AQf6NmCAAZpaUes"
+                    "URL",
+                    "KEY"
                 );                
             var regnoINP = document.getElementById('regno').value
-            // console.log(regnoINP)
             var nameINP = document.getElementById('name').value
-            // console.log(nameINP)
             var emailINP = document.getElementById('email').value
             console.log(regnoINP + nameINP + emailINP)
 
             let { data, error } = await supabase
                 .from('stdinfo')
-                // .insert({ reg_no: `${regnoINP}`, name: '`${nameINP}`', email: '`${emailINP}`' })
                 .insert({ regn_no: regnoINP, name: ("" + nameINP), email: ("" + emailINP) })
             if (error) {
                 console.log(error)
