@@ -47,10 +47,10 @@
         //initializing
         import { createClient } from "https://cdn.skypack.dev/@supabase/supabase-js";
 
-        // const supabase = createClient(
-        //     URL,
-        //     KEY
-        // );
+        const supabase = createClient(
+            "https://gpzjfpxijvsmpcnkylse.supabase.co",
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwempmcHhpanZzbXBjbmt5bHNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDYwMzUyOTEsImV4cCI6MTk2MTYxMTI5MX0.kggo60IGe1b7bsQKvmjXJAawuEE9AQf6NmCAAZpaUes"
+        );
 
         const main = async () => {
             let { data, error } = await supabase

@@ -11,7 +11,7 @@
             padding: 0;
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
+        }
 
         .main {
             display: flex;
@@ -90,30 +90,61 @@
 
         <div class="register">Registeration</div>
 
-        <form class="main--input" onsubmit="alert(`You're all set! ;)`)">
-
+        <form class="main--input">
             <span class="dot"></span>
 
             <label>Registration Number</label>
-            <input type="number"/>
+            <input type="number" id="regno" />
 
             <label>Full Name</label>
-            <input type="text"/>
+            <input type="text" id="name" />
 
             <label>Email</label>
-            <input type="email" />
+            <input type="email" id="email" />
 
-            <button type="submit">REGISTER</button>
+            <button type="button" onclick="alert(`You're all set! ;)`)">REGISTER</button>
             <span style="font-size: 0.9em; color: #666;">It was that easy!</span>
 
 
         </form>
 
-        <a href="../../index.html"><div class="main--right--arrow">
-            <img src="./icons8-arrow-100.png" />
-        </div>
+        <a href="../../index.html">
+            <div class="main--right--arrow">
+                <img src="./icons8-arrow-100.png" />
+            </div>
         </a>
     </div>
+
+        <!-- <script type="module">
+            import { createClient } from "https://cdn.skypack.dev/@supabase/supabase-js";
+            async function main () {
+        
+                const supabase = createClient(
+                    "https://gpzjfpxijvsmpcnkylse.supabase.co",
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwempmcHhpanZzbXBjbmt5bHNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDYwMzUyOTEsImV4cCI6MTk2MTYxMTI5MX0.kggo60IGe1b7bsQKvmjXJAawuEE9AQf6NmCAAZpaUes"
+                );                
+            var regnoINP = document.getElementById('regno').value
+            // console.log(regnoINP)
+            var nameINP = document.getElementById('name').value
+            // console.log(nameINP)
+            var emailINP = document.getElementById('email').value
+            console.log(regnoINP + nameINP + emailINP)
+
+            let { data, error } = await supabase
+                .from('stdinfo')
+                // .insert({ reg_no: `${regnoINP}`, name: '`${nameINP}`', email: '`${emailINP}`' })
+                .insert({ regn_no: regnoINP, name: ("" + nameINP), email: ("" + emailINP) })
+            if (error) {
+                console.log(error)
+                return
+            }
+            console.log(data)
+        }
+
+    </script> -->
+
+
+
 </body>
 
 </html>

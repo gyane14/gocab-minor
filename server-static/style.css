@@ -68,22 +68,27 @@ td {
 
 .crud {
 
-    background-color: #EAE7DC;
+    /* background-color: #EAE7DC; */
     display: flex;
     justify-content: center;
-    font-size: 1em;
+    font-size: 0.9em;
     margin: auto;
     cursor: default;
 }
 
 .cruds {
-    padding: 0.5em;
-}
-
-.cruds:hover {
     background-color: #E85A4F;
     color: white;
+    padding: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    cursor: pointer;
 }
+
+/* .cruds:hover {
+    background-color: #EAE7DC;
+    color: #222;
+} */
 
 footer {
     text-align: center;
