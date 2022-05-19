@@ -11,13 +11,13 @@ body {
 }
 
 table {
-    background-color: #EAE7DC;
     margin: auto;
     margin-top: 1em;
     margin-bottom: 1em;
 }
 
 th {
+    background-color: #EAE7DC;
     text-align: center;
     font-weight: 600;
     padding: 0.1em;
@@ -27,6 +27,7 @@ th {
 }
 
 td {
+    background-color: #EAE7DC;
     text-align: center;
     font-weight: 400;
     padding: 0.1em;
@@ -38,23 +39,16 @@ td {
 .nav {
     background-color: #EAE7DC;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     font-size: 1.3em;
-    width: 30%;
+    width: 20em;
     margin: auto;
 }
 
 .navs {
-    cursor: pointer;
     padding: 0.5em;
     color: #222;
-    margin-left: 2em;
-    margin-right: 2em;
-}
-
-.navs:hover {
-    background-color: #E85A4F;
-    color: white;
+    /* border: 2px solid red; */
 }
 
 .header {
@@ -104,4 +98,8 @@ footer {
 
 a {
     text-decoration: none;
+}
+
+.tbRD{
+    margin-left: 0.2em;
 }

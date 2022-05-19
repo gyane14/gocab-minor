@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoCab: Admin Portal</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -15,42 +16,129 @@
         Voila! You're an Admin🥳
     </div>
 
-    <!-- <div class="nav"> -->
     <div class="nav">
         <span class="navs"><a>Student Info</a></span>
         <span class="navs"><a>Trips Info</a></span>
     </div>
-    <!-- </div> -->
 
     <div class="tabDiv">
         <table id="table">
-            <!-- <tr>
+            <tr id='tableHeader'>
                 <th>SR_NO</th>
                 <th>REG_NO</th>
                 <th>NAME</th>
                 <th>STD_ID</th>
                 <th>CREATED_AT</th>
                 <th>EMAIL</th>
-            </tr> -->
+            </tr>
+            <tr id="tableData">
+                <td>transportation</td>
+                <td>19734351741</td>
+                <td>blanket</td>
+                <td>contrast</td>
+                <td>silence</td>
+                <td>power</td>
+            </tr>
+            <tr id="tableData">
+                <td>excitement</td>
+                <td>18387733876</td>
+                <td>face</td>
+                <td>signal</td>
+                <td>general</td>
+                <td>join</td>
+            </tr>
+            <tr id="tableData">
+                <td>lie</td>
+                <td>18285351127</td>
+                <td>tightly</td>
+                <td>trace</td>
+                <td>rough</td>
+                <td>customs</td>
+            </tr>
+            <tr id="tableData">
+                <td>ate</td>
+                <td>19949176993</td>
+                <td>anywhere</td>
+                <td>conversation</td>
+                <td>themselves</td>
+                <td>free</td>
+            </tr>
+            <tr id="tableData">
+                <td>several</td>
+                <td>19761472195</td>
+                <td>shoulder</td>
+                <td>difficulty</td>
+                <td>local</td>
+                <td>most</td>
+            </tr>
+            <tr id="tableData">
+                <td>activity</td>
+                <td>19597461379</td>
+                <td>account</td>
+                <td>pour</td>
+                <td>member</td>
+                <td>farmer</td>
+            </tr>
+            <tr id="tableData">
+                <td>never</td>
+                <td>19579512375</td>
+                <td>choose</td>
+                <td>put</td>
+                <td>region</td>
+                <td>similar</td>
+            </tr>
+                <tr id="tableData">
+                    <td>chemical</td>
+                    <td>19949176993</td>
+                    <td>lake</td>
+                    <td>wash</td>
+                    <td>disease</td>
+                    <td>buy</td>
+                </tr>
+            <tr id="tableData">
+                <td>lose</td>
+                <td>19597461379</td>
+                <td>dear</td>
+                <td>screen</td>
+                <td>consonant</td>
+                <td>nervous</td>
+            </tr>
+            <tr id="tableData">
+                <td>leaf</td>
+                <td>18387733876</td>
+                <td>drew</td>
+                <td>fly</td>
+                <td>pleasure</td>
+                <td>crowd</td>
+            </tr>
+            <tr id="tableData">
+                <td>day</td>
+                <td>18285351127</td>
+                <td>real</td>
+                <td>forward</td>
+                <td>floating</td>
+                <td>drop</td>
+            </tr>
         </table>
     </div>
 
     <div class="crud">
-        <span class="cruds"><a>Update Record</a></span>
-        <span class="cruds"><a>Delete Record</a><span>
+        <span class="cruds" id='updData'><a>Update Record</a></span>
+        <span class="cruds" id='delData'><a>Delete Record</a><span>
     </div>
+    
     <footer>
         &copy; Abhigyan Pal & Sarthak Vijayvergiya 2022 | Manipal University Jaipur
     </footer>
 
-    <script type="module" defer>
+    <script type="module">
         //initializing
         import { createClient } from "https://cdn.skypack.dev/@supabase/supabase-js";
 
-        const supabase = createClient(
-            "URL",
-            "KEY"
-        );
+        // const supabase = createClient(
+        //     "URL",
+        //     "KEY"
+        // );
 
         const main = async () => {
             let { data, error } = await supabase
@@ -63,7 +151,7 @@
             }
             var table = document.getElementById('table')
             var tab = `
-            <tr>
+            <tr id="tableHeader">
                 <th>SR_NO</th>
                 <th>REG_NO</th>
                 <th>NAME</th>
@@ -73,7 +161,7 @@
             </tr>`
 
             for (let i of data) {
-                tab += `<tr>
+                tab += `<tr id="tableData">
                     <td>${i.sr_no}</td>
                     <td>${i.reg_no}</td>
                     <td>${i.name}</td>
@@ -87,6 +175,34 @@
         }
 
         main()
+    </script>
+
+    <script defer>
+        $('document').ready(function(){
+            $('tr#tableData').append("<td><input type='radio' name='radioGroup1' class='tbRD'/></td>")
+
+            $('#updData').click(function(){
+                // 2-reg_no , 3-name , 6-email
+                var newMail = prompt("Please enter the required email","")
+                if(newMail){
+                    $('input:checked').parent().parent().find("td:nth-child(6)").text(`${newMail}`);
+                    console.log(`Reg_No: ${$('input:checked').parent().parent().find("td:nth-child(2)").text()}, row updated @ ${$.now()}`);
+                }else{
+                    console.log(`Reg_No: ${$('input:checked').parent().parent().find("td:nth-child(2)").text()}, was not updated`);
+                }              
+            })
+
+            $('#delData').click(function(){
+                if (confirm('Are you sure you want to delete this row from the database?')) {
+                    $('input:checked').parent().parent().hide();
+                    console.log(`Reg_No: ${$('input:checked').parent().parent().find("td:nth-child(2)").text()}, row deleted @ ${$.now()}`);
+                } else {
+                    console.log(`Reg_No: ${$('input:checked').parent().parent().find("td:nth-child(2)").text()}, was not deleted`);
+                }
+            })
+
+        });
+
     </script>
 
 </body>
